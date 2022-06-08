@@ -1,12 +1,12 @@
 {
-  "name": "zoom_clone",
+  "name": "2022-graduation-project",
   "version": "1.0.0",
-  "description": "Zoom Clone using NodeJS, WebRTC and Websockets",
+  "description": "2022 graduation project",
   "keywords": [],
-  "author": "taeho",
+  "author": "TEAM-JLB",
   "license": "MIT",
   "scripts": {
-    "start": "node build/server.js",
+    "start": "node build/app.js",
     "build": "babel src -d build --ignore src/public",
     "dev": "nodemon"
   },
