@@ -4,6 +4,80 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-    body 
-        h1 MainPage 입니다.
+        link(rel="stylesheet", href="./public/css/mainpage.css")
+        title Main
+    body
+        header 
+            h1 TEAM JLB
+        main#mainpage 
+            div#sidemenu
+            div#meetingList
+                //- div#searchbar
+                //-     input(type="text" placeholder="Search ...")
+                //-     img(src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png")
+                //- button#addMeeting Add New Meeting
+                
+                div#title 🖋 전체 회의 리스트
+                div#meetingTable
+                    table
+                        thead
+                            tr
+                                th 최초 개설 날짜
+                                th 회의 ID
+                                th 회의명
+                                th 회의 참가
+                                th 회의 삭제
+                        tbody#meetingTbody
+                            tr
+                                td 2022/01/05
+                                td 5943
+                                td 동아리 정기 회의
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                            tr
+                                td 2022/03/02
+                                td 2853
+                                td 졸업프로젝트 회의
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                            tr
+                                td 2022/03/18
+                                td 9974
+                                td 알고리즘 스터디
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                            tr
+                                td 2022/05/10
+                                td 5921
+                                td 제주도 여행 플랜
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                            tr
+                                td 2022/05/28
+                                td 8990
+                                td JavaScript 스터디
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                            tr
+                                td 2022/06/03
+                                td 7266
+                                td CS 면접 스터디
+                                td
+                                    button 참가
+                                td
+                                    button 삭제
+                        tfoot
+                            td#addMeeting(colspan="5") ➕ 새 회의 추가
+
+
+        script(src="/public/js/mainpage.js")

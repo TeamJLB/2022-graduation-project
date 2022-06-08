@@ -29,21 +29,20 @@ let pcObj = {
 const chatIcon = document.querySelector("#chatapp");
 const memoIcon = document.querySelector("#memoapp");
 
-const clickchat=()=>{
+const clickchat = () => {
   const chatview = document.querySelector("#chatview");
   const memoview = document.querySelector("#memo");
   chatview.hidden = false;
   memoview.hidden = true;
-}
-const clickmemo=()=> {
+};
+const clickmemo = () => {
   const chatview = document.querySelector("#chatview");
   const memoview = document.querySelector("#memo");
   chatview.hidden = true;
   memoview.hidden = false;
-}
+};
 memoIcon.addEventListener("click", clickmemo);
 chatIcon.addEventListener("click", clickchat);
-
 
 async function getCameras() {
   try {
@@ -78,7 +77,7 @@ async function getMedia(deviceId) {
 
   try {
     myStream = await navigator.mediaDevices.getUserMedia(
-        deviceId ? cameraConstraints : initialConstraints
+      deviceId ? cameraConstraints : initialConstraints
     );
 
     // stream을 mute하는 것이 아니라 HTML video element를 mute한다.
@@ -88,8 +87,8 @@ async function getMedia(deviceId) {
     if (!deviceId) {
       // mute default
       myStream //
-          .getAudioTracks()
-          .forEach((track) => (track.enabled = false));
+        .getAudioTracks()
+        .forEach((track) => (track.enabled = false));
 
       await getCameras();
     }
@@ -100,8 +99,8 @@ async function getMedia(deviceId) {
 
 function handleMuteClick() {
   myStream //
-      .getAudioTracks()
-      .forEach((track) => (track.enabled = !track.enabled));
+    .getAudioTracks()
+    .forEach((track) => (track.enabled = !track.enabled));
   if (muted) {
     unMuteIcon.classList.remove(HIDDEN_CN);
     muteIcon.classList.add(HIDDEN_CN);
@@ -115,8 +114,8 @@ function handleMuteClick() {
 
 function handleCameraClick() {
   myStream //
-      .getVideoTracks()
-      .forEach((track) => (track.enabled = !track.enabled));
+    .getVideoTracks()
+    .forEach((track) => (track.enabled = !track.enabled));
   if (cameraOff) {
     cameraIcon.classList.remove(HIDDEN_CN);
     unCameraIcon.classList.add(HIDDEN_CN);
@@ -136,8 +135,8 @@ async function handleCameraChange() {
       peerConnectionObjArr.forEach((peerConnectionObj) => {
         const peerConnection = peerConnectionObj.connection;
         const peerVideoSender = peerConnection
-            .getSenders()
-            .find((sender) => sender.track.kind == "video");
+          .getSenders()
+          .find((sender) => sender.track.kind == "video");
         peerVideoSender.replaceTrack(newVideoTrack);
       });
     }
@@ -218,7 +217,7 @@ function handleChatSubmit(event) {
   const message = chatInput.value;
   chatInput.value = "";
   socket.emit("chat", `${nickname}: ${message}`, roomName);
-  writeChat(`You: ${message}`, MYCHAT_CN);
+  writeChat(`${nickname}(You): ${message}`, MYCHAT_CN);
 }
 
 function writeChat(message, className = null) {
@@ -327,22 +326,22 @@ socket.on("accept_join", async (userObjArr) => {
     return;
   }
 
-  writeChat("Notice!", NOTICE_CN);
+  writeChat("🔊 알림 🔊", NOTICE_CN);
   for (let i = 0; i < length - 1; ++i) {
     try {
       const newPC = createConnection(
-          userObjArr[i].socketId,
-          userObjArr[i].nickname
+        userObjArr[i].socketId,
+        userObjArr[i].nickname
       );
       const offer = await newPC.createOffer();
       await newPC.setLocalDescription(offer);
       socket.emit("offer", offer, userObjArr[i].socketId, nickname);
-      writeChat(`__${userObjArr[i].nickname}__`, NOTICE_CN);
+      writeChat(`${userObjArr[i].nickname}`, NOTICE_CN);
     } catch (err) {
       console.error(err);
     }
   }
-  writeChat("is in the room.", NOTICE_CN);
+  writeChat("님이 방에 들어와 있어요.", NOTICE_CN);
 });
 
 socket.on("offer", async (offer, remoteSocketId, remoteNickname) => {
@@ -352,7 +351,7 @@ socket.on("offer", async (offer, remoteSocketId, remoteNickname) => {
     const answer = await newPC.createAnswer();
     await newPC.setLocalDescription(answer);
     socket.emit("answer", answer, remoteSocketId);
-    writeChat(`notice! __${remoteNickname}__ joined the room`, NOTICE_CN);
+    writeChat(`✅ ${remoteNickname} 님이 방에 들어왔어요.`, NOTICE_CN);
   } catch (err) {
     console.error(err);
   }
@@ -372,7 +371,7 @@ socket.on("chat", (message) => {
 
 socket.on("leave_room", (leavedSocketId, nickname) => {
   removeVideo(leavedSocketId);
-  writeChat(`notice! ${nickname} leaved the room.`, NOTICE_CN);
+  writeChat(`❎ ${nickname} 님이 방을 나갔어요.`, NOTICE_CN);
   --peopleInRoom;
   sortStreams();
 });
@@ -404,8 +403,8 @@ function createConnection(remoteSocketId, remoteNickname) {
   //   handleConnectionStateChange
   // );
   myStream //
-      .getTracks()
-      .forEach((track) => myPeerConnection.addTrack(track, myStream));
+    .getTracks()
+    .forEach((track) => myPeerConnection.addTrack(track, myStream));
 
   pcObj[remoteSocketId] = myPeerConnection;
 

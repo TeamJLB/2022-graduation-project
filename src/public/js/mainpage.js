@@ -7,9 +7,10 @@ const meetingTable = document.querySelector("#meetingTable table");
 const meetingTbody = meetingList.querySelector("#meetingTbody");
 
 function handleAddMeeting() {
-  let newRow = document.createElement("tr");
-  let newCell = document.createElement("td");
-  const thNum = meetingTable.rows[0].cells.length;
+  //   let newRow = document.createElement("tr");
+  //   let newCell = document.createElement("td");
+  //   const thNum = meetingTable.rows[0].cells.length;
+  location.href = "/meetingRoom";
 }
 
 addMeetingBtn.addEventListener("click", handleAddMeeting);
