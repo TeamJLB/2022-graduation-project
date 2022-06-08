@@ -1,27 +1,27 @@
-import express from "express";
 // import WebSocket from "ws";
 import SocketIO from "socket.io";
 import http from "http";
+import express from "express";
+
+const app = express();
+
+const httpServer = http.createServer(app);
+const wsServer = SocketIO(httpServer);
 
 const PORT = process.env.PORT || 4000;
 
-const app = express();
+// Router
+const mainPageRouter = require("./routes/mainpage");
+const meetingRoomRouter = require("./routes/meetingRoom");
+const summaryRouter = require("./routes/summary");
 
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
 
 app.use("/public", express.static(process.cwd() + "/src/public"));
-
-app.get("/", (req, res) => {
-  res.render("home");
-});
-
-app.get("/*", (req, res) => {
-  res.redirect("/");
-});
-
-const httpServer = http.createServer(app);
-const wsServer = SocketIO(httpServer);
+app.use("/", mainPageRouter);
+app.use("/meetingRoom", meetingRoomRouter);
+app.use("/summary", summaryRouter);
 
 let roomObjArr = [
   // {
@@ -107,7 +107,7 @@ wsServer.on("connection", (socket) => {
     for (let i = 0; i < roomObjArr.length; ++i) {
       if (roomObjArr[i].roomName === myRoomName) {
         const newUsers = roomObjArr[i].users.filter(
-            (user) => user.socketId != socket.id
+          (user) => user.socketId != socket.id
         );
         roomObjArr[i].users = newUsers;
         --roomObjArr[i].currentNum;
@@ -121,7 +121,7 @@ wsServer.on("connection", (socket) => {
     // Delete room
     if (isRoomEmpty) {
       const newRoomObjArr = roomObjArr.filter(
-          (roomObj) => roomObj.currentNum != 0
+        (roomObj) => roomObj.currentNum != 0
       );
       roomObjArr = newRoomObjArr;
     }
@@ -129,5 +129,5 @@ wsServer.on("connection", (socket) => {
 });
 
 const handleListen = () =>
-    console.log(`✅ Listening on http://localhost:${PORT}`);
+  console.log(`✅ Listening on http://localhost:${PORT}`);
 httpServer.listen(PORT, handleListen);
