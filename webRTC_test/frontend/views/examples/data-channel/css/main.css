@@ -1,0 +1,51 @@
+@charset "utf-8";
+/*!
+ *
+ * WebRTC Lab
+ * @author dodortus (dodortus@gmail.com / codejs.co.kr)
+ *
+ */
+
+.wrap {
+  margin-top: 30px;
+  position: relative;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.wrap p {
+  font-size: 20px;
+}
+
+.wrap button {
+  margin-top: 20px;
+  min-width: 80px;
+  vertical-align: top;
+}
+
+#file-wrap {
+  margin: 10px 0;
+  padding: 30px 0;
+  text-align: left;
+}
+
+#file-wrap progress {
+  width: 100%;
+}
+
+#connection-status > p {
+  margin-bottom: 80px;
+}
+
+#connection-status span {
+  font-size: 60px;
+}
+
+#connection-status .people-two,
+.connected #connection-status .people-one {
+  display: none;
+}
+
+.connected #connection-status .people-two {
+  display: block;
+}
