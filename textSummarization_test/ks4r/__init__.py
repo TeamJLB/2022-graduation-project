@@ -45,9 +45,9 @@ summarizer = Summarizer(k=3
 # summary = summarizer.summarize(lines)
 # print(summary)
 
-def summarization(content):
-  summary = summarizer.summarize(content)
-  print(summary)
+# def summarization(content):
+#   summary = summarizer.summarize(content)
+#   print(summary)
 
-if __name__ == '__main__':
-  summarization(sys.argv[1])
+# if __name__ == '__main__':
+#   summarization(sys.argv[1])
