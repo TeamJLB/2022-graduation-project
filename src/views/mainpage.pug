@@ -11,6 +11,8 @@ html(lang="en")
             h1 TEAM JLB
         main#mainpage 
             div#sidemenu
+                ul
+                    li 
             div#meetingList
                 //- div#searchbar
                 //-     input(type="text" placeholder="Search ...")
@@ -25,6 +27,7 @@ html(lang="en")
                                 th 최초 개설 날짜
                                 th 회의 ID
                                 th 회의명
+                                th 회의 히스토리
                                 th 회의 참가
                                 th 회의 삭제
                         tbody#meetingTbody
@@ -32,6 +35,8 @@ html(lang="en")
                                 td 2022/01/05
                                 td 5943
                                 td 동아리 정기 회의
+                                td
+                                    button 회의 히스토리
                                 td
                                     button 참가
                                 td
@@ -41,6 +46,8 @@ html(lang="en")
                                 td 2853
                                 td 졸업프로젝트 회의
                                 td
+                                    button 회의 히스토리
+                                td
                                     button 참가
                                 td
                                     button 삭제
@@ -48,6 +55,8 @@ html(lang="en")
                                 td 2022/03/18
                                 td 9974
                                 td 알고리즘 스터디
+                                td
+                                    button 회의 히스토리
                                 td
                                     button 참가
                                 td
@@ -57,6 +66,8 @@ html(lang="en")
                                 td 5921
                                 td 제주도 여행 플랜
                                 td
+                                    button 회의 히스토리
+                                td
                                     button 참가
                                 td
                                     button 삭제
@@ -64,6 +75,8 @@ html(lang="en")
                                 td 2022/05/28
                                 td 8990
                                 td JavaScript 스터디
+                                td
+                                    button 회의 히스토리
                                 td
                                     button 참가
                                 td
@@ -73,11 +86,13 @@ html(lang="en")
                                 td 7266
                                 td CS 면접 스터디
                                 td
+                                    button 회의 히스토리
+                                td
                                     button 참가
                                 td
                                     button 삭제
                         tfoot
-                            td#addMeeting(colspan="5") ➕ 새 회의 추가
+                            td#addMeeting(colspan="6") ➕ 새 회의 추가
 
 
         script(src="/public/js/mainpage.js")

@@ -6,7 +6,7 @@
   "author": "TEAM-JLB",
   "license": "MIT",
   "scripts": {
-    "start": "node build/app.js",
+    "start": "node build/mainpage.js",
     "build": "babel src -d build --ignore src/public",
     "dev": "nodemon"
   },
