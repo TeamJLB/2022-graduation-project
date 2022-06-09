@@ -1,5 +1,6 @@
 const socket = io();
 
+const logo = document.getElementById("logo");
 const myFace = document.querySelector("#myFace");
 const muteBtn = document.querySelector("#mute");
 const muteIcon = muteBtn.querySelector(".muteIcon");
@@ -457,3 +458,9 @@ function handleConnectionStateChange(event) {
   }
 }
 */
+
+function clickLogo() {
+  location.href = "/";
+}
+
+logo.addEventListener("click", clickLogo);

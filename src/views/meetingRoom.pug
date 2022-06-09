@@ -11,13 +11,13 @@ html(lang="en")
     body 
         header
             //- i(class="fab fa-pied-piper-square fa-2x")
-            h1 TEAM JLB
+            h1#logo TEAM JLB
         main
             div#welcome 
                 form
-                    input#roomName(type="text", required, placeholder="Room Name")
-                    input#nickname(type="text", required, placeholder="Your Nickname")
-                    button Enter Room
+                    input#roomName(type="text", required, placeholder="회의실 이름을 입력하세요.")
+                    input#nickname(type="text", required, placeholder="회의실에서 사용할 이름을 입력하세요.")
+                    button 입장하기
 
             div#call(class="call")
                 div#streamBox

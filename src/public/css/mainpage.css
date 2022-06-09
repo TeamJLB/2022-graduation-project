@@ -82,7 +82,7 @@ main {
 }
 
 #meetingList {
-  width: 85%;
+  width: 80%;
   height: 100%;
 }
 
@@ -128,7 +128,7 @@ main {
 /* 간격 */
 
 table {
-  width: 80%;
+  width: 100%;
 }
 
 th {

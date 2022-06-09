@@ -8,13 +8,14 @@ html(lang="en")
         title Main
     body
         header 
-            h1 TEAM JLB
+            h1#logo TEAM JLB
         main
             div#meetingList
-                div#title 🔍 회의 히스토리
-                div#searchbar
-                    input(type="text" placeholder="Search ...")
-                    img(src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png")
+                div#historytitle
+                    div#title 🔍 회의 히스토리
+                    div#searchbar
+                        input(type="text" placeholder="Search ...")
+                        img(src="https://s3.ap-northeast-2.amazonaws.com/cdn.wecode.co.kr/icon/search.png")
                 div#meetingTable
                     table
                         thead
@@ -22,7 +23,7 @@ html(lang="en")
                                 th 개설 날짜
                                 th 회의 주제
                                 th 참가자
-                                th 회의 요약
+                                th 회의 발언 요약
                                 th 메모
                                 th 주요 키워드
                         tbody#meetingTbody
@@ -34,7 +35,7 @@ html(lang="en")
                                     button Haein
                                     button Jaeho
                                 td
-                                    button#summary 회의 요약 내용
+                                    button#summary 요약 내용
                                 td
                                     button#memo 메모 보기
                                 td
@@ -49,22 +50,7 @@ html(lang="en")
                                     button Haein
                                     button Jaeho
                                 td
-                                    button#summary 회의 요약 내용
-                                td
-                                    button#memo 메모 보기
-                                td
-                                    button 
-                                    button 
-                                    button 
-                            tr
-                                td 2022/01/05
-                                td 동아리 신입 부원 면접 관련 회의
-                                td 
-                                    button Jeonghyeon
-                                    button Haein
-                                    button Jaeho
-                                td
-                                    button#summary 회의 요약 내용
+                                    button#summary 요약 내용
                                 td
                                     button#memo 메모 보기
                                 td
@@ -79,7 +65,22 @@ html(lang="en")
                                     button Haein
                                     button Jaeho
                                 td
-                                    button#summary 회의 요약 내용
+                                    button#summary 요약 내용
+                                td
+                                    button#memo 메모 보기
+                                td
+                                    button 면접
+                                    button 깃허브
+                                    button 인성
+                            tr
+                                td 2022/01/05
+                                td 동아리 신입 부원 면접 관련 회의
+                                td 
+                                    button Jeonghyeon
+                                    button Haein
+                                    button Jaeho
+                                td
+                                    button#summary 요약 내용
                                 td
                                     button#memo 메모 보기
                                 td
