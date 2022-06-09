@@ -5,6 +5,7 @@ const meetingList = document.getElementById("meetingList");
 const searchbar = meetingList.querySelector("#searchbar");
 const meetingTable = document.querySelector("#meetingTable table");
 const meetingTbody = meetingList.querySelector("#meetingTbody");
+const historyBtns = document.querySelectorAll("#historyBtn");
 
 function handleAddMeeting() {
   //   let newRow = document.createElement("tr");
@@ -14,3 +15,10 @@ function handleAddMeeting() {
 }
 
 addMeetingBtn.addEventListener("click", handleAddMeeting);
+
+function handleMeetingHistory() {
+  location.href = "/meetingHistory";
+}
+historyBtns.forEach((historyBtn) =>
+  historyBtn.addEventListener("click", handleMeetingHistory)
+);

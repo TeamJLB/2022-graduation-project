@@ -14,6 +14,7 @@ const PORT = process.env.PORT || 4000;
 const mainPageRouter = require("./routes/mainpage");
 const meetingRoomRouter = require("./routes/meetingRoom");
 const summaryRouter = require("./routes/summary");
+const meetingHistoryRouter = require("./routes/meetingHistory");
 
 app.set("view engine", "pug");
 app.set("views", process.cwd() + "/src/views");
@@ -22,6 +23,7 @@ app.use("/public", express.static(process.cwd() + "/src/public"));
 app.use("/", mainPageRouter);
 app.use("/meetingRoom", meetingRoomRouter);
 app.use("/summary", summaryRouter);
+app.use("/meetingHistory", meetingHistoryRouter);
 
 let roomObjArr = [
   // {

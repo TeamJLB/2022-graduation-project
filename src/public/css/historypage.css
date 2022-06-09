@@ -1,0 +1,192 @@
+@import "reset.css";
+
+:root {
+  --black-color: #212121;
+
+  --eerie-black: #1c1c1cff;
+  --gainsboro: #daddd8ff;
+  --alabaster: #ecebe4ff;
+  --cultured: #eef0f2ff;
+  --ghost-white: #fafaffff;
+
+  --green-icon-color: #23c552;
+  --red-icon-color: #f85031;
+  --white-icon-color: #fff;
+
+  --modal-box-color: #8eacbb;
+  --modal-btn-color: #62ccff;
+
+  --rich-black-fogra-29: #0d1b2aff;
+  --oxford-blue: #1b263bff;
+  --bdazzled-blue: #415a77ff;
+  --shadow-blue: #778da9ff;
+  --platinum: #e0e1ddff;
+
+  --ebony: #5f634fff;
+  --light-blue: #9bc4cbff;
+  --honeydew: #cfebdfff;
+  --nyanza: #e2fadbff;
+  --tea-green: #dbefbcff;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  color: var(--black-color);
+}
+
+header {
+  width: 100%;
+  height: 7vh;
+
+  color: #778da9ff;
+
+  display: flex;
+  align-items: center;
+}
+
+header i {
+  margin-left: 30px;
+}
+
+header h1 {
+  margin-left: 15px;
+
+  font-size: 150%;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+main {
+  width: 100%;
+  height: 93vh;
+
+  background-color: #f5f5f9;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#mainpage {
+  float: left;
+}
+#sidemenu {
+  width: 15%;
+  height: 100%;
+  left: 0px;
+  background-color: white;
+}
+
+#meetingList {
+  width: 85%;
+  height: 100%;
+}
+
+#title {
+  margin: 20px;
+  padding: 10px;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+#meetingTable {
+  width: auto;
+  overflow: hidden;
+  height: auto;
+  margin: 20px;
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* 간격 */
+
+table {
+  width: 90%;
+}
+
+th {
+  padding: 10px;
+}
+tr,
+td {
+  padding: 8px;
+}
+
+th,
+td {
+  text-align: left;
+  border-left: 1px solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+  border-collapse: collapse;
+}
+
+th:first-child,
+td:first-child {
+  border-left: none;
+}
+
+thead th:nth-child(1) {
+  width: 10%;
+}
+
+thead th:nth-child(2) {
+  width: 40%;
+}
+
+thead th:nth-child(3) {
+  width: 15%;
+}
+
+thead th:nth-child(4) {
+  width: 13%;
+  text-align: center;
+}
+
+thead th:nth-child(5) {
+  width: 12%;
+  text-align: center;
+}
+
+thead th:nth-child(6) {
+  width: 10%;
+  text-align: center;
+}
+
+tbody td:nth-child(4) {
+  text-align: center;
+}
+
+tbody td:nth-child(5) {
+  text-align: center;
+}
+tbody td:nth-child(6) {
+  text-align: center;
+}
+
+tbody td:nth-child(5) button {
+  background-color: #e1eeff;
+}
+
+tbody td:nth-child(6) button {
+  background-color: #ffe1e1;
+}
+tfoot td {
+  border: none;
+  padding: 10px;
+}
+tfoot td:hover {
+  background-color: #e9e9e9;
+  cursor: pointer;
+}
+
+button {
+  border: none;
+  display: inline-block;
+  padding: 5px 20px;
+  border-radius: 10px;
+}
