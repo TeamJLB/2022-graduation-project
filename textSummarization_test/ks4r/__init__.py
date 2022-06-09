@@ -38,6 +38,12 @@ summarizer = Summarizer(k=3
 
 # ------
 # [테스트]
+# --for your own test--
+def test_input_data():
+  # --try putting your text here--
+  text = ''
+  return text
+
 def test_data():
   DIR = "./data"
   TEST_SOURCE = os.path.join(DIR, "test.json")
@@ -80,6 +86,7 @@ if __name__ == '__main__':
     context = sys.argv[1]
   elif len(sys.argv) == 1:
     context = test_data()
+    # context = test_input_data()
 
   print("----- [요약본] -----")
   summarization(context)
