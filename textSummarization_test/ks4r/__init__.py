@@ -38,21 +38,28 @@ summarizer = Summarizer(k=3
 
 # ------
 # [테스트]
-# DIR = "./data"
-# TEST_SOURCE = os.path.join(DIR, "test.json")
+def test_data():
+  DIR = "./data"
+  TEST_SOURCE = os.path.join(DIR, "test.json")
 
-# with open(TEST_SOURCE) as f:
-#     TEST_DATA = json.loads(f.read())
+  with open(TEST_SOURCE) as f:
+      TEST_DATA = json.loads(f.read())
 
-# text = ''
+  text = ''
 
-# test = pd.DataFrame(columns=['uid', 'title', 'region', 'context'])
-# for i, data in enumerate(TEST_DATA):
-#     if i == 1: break
-#     for agenda in data['context'].keys():
-#         for line in data['context'][agenda]:
-#             text += data['context'][agenda][line] + ' '
-# # print(text.rstrip())
+  test = pd.DataFrame(columns=['uid', 'title', 'region', 'context'])
+  for i, data in enumerate(TEST_DATA):
+      if i == 1: break
+      for agenda in data['context'].keys():
+          for line in data['context'][agenda]:
+              text += data['context'][agenda][line] + ' '
+  # print(text.rstrip())
+  text = text.rstrip()
+  print("----- [원문] ----- ")
+  print(text)
+  print('\n\n')
+
+  return text
 
 # summary = summarizer.summarize(text.rstrip())
 # for index, line in enumerate(summary):
@@ -64,6 +71,15 @@ def summarization(content):
   summary = summarizer.summarize(content)
   for index, line in enumerate(summary):
     print(str(index+1) + '. ' + line + '.')
+    print()
 
 if __name__ == '__main__':
-  summarization(sys.argv[1])
+  # print(sys.argv[1])
+  context = ''
+  if len(sys.argv) > 1:
+    context = sys.argv[1]
+  elif len(sys.argv) == 1:
+    context = test_data()
+
+  print("----- [요약본] -----")
+  summarization(context)
