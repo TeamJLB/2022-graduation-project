@@ -188,6 +188,10 @@ tfoot td:hover {
   cursor: pointer;
 }
 
+tbody td:nth-child(4) button:hover {
+  cursor: pointer;
+}
+
 button {
   border: none;
   display: inline-block;
