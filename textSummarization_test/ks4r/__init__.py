@@ -25,7 +25,7 @@ warnings.filterwarnings(action='ignore')
 summarizer = Summarizer(k=3
                       , useful_tags=['Noun', 'Verb', 'Adjective', 'Determiner', 'Adverb', 'Conjunction', 'Josa', 'PreEomi', 'Eomi', 'Suffix', 'Alpha', 'Number']
                       , stopwords=None
-	          , delimiter='\.|\\n|\.\\n|\!'
+	                    , delimiter='\.|\\n|\.\\n|\!'
                       , spell_check=True
                       , return_all=False)
 # summarizer = Summarizer(text)   #여러 리뷰들을 하나의 String으로 만들어 넣으시면 됩니다.
@@ -46,7 +46,7 @@ def test_input_data():
 
 def test_data():
   DIR = "./data"
-  TEST_SOURCE = os.path.join(DIR, "test.json")
+  TEST_SOURCE = os.path.join(DIR, "train.json")
 
   with open(TEST_SOURCE) as f:
       TEST_DATA = json.loads(f.read())

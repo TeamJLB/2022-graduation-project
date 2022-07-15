@@ -94,7 +94,7 @@ $(function () {
       if (event.results[i].isFinal) {
         finalTranscript += transcript + '.';
       } else {
-        interimTranscript += transcript + '.';
+        interimTranscript += transcript;
       }
     }
 
